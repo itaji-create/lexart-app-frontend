@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/Login.css'
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,7 +35,7 @@ class Login extends Component {
       <div className="container-fluid">
         <div className='row justify-content-center align-items-center'>
           <form className="w-50 mt-5">
-            <h2 className="mb-3 fw-bold text-light">Login</h2>
+            <h2 className="mb-3 fw-bold text-light">Inscrever-se</h2>
             <div id="input-login-box">
               <div className="form-floating">
                 <input
@@ -57,16 +57,16 @@ class Login extends Component {
                   value={password}
                   onChange={ this.handleInputChange }
                 />
-                <label htmlFor="floatingPassword">Password</label>
+                <label htmlFor="floatingPassword">Senha</label>
               </div>
             </div>
             <div className="my-3 text-center">
               {error && <p className="error-message">{error}</p>}
-              <button className="btn-outline-custom" onClick={this.handleLogin}>Login</button>
+              <button className="btn-outline-custom" onClick={this.handleLogin}>Criar Usuário</button>
               <div className='fixed-bottom '>
-                <sub className="text-light">Ainda não possui uma conta?</sub>
+                <sub className="text-light">Já possui uma conta?</sub>
                 <a
-                  href="/registro"
+                  href="/login"
                   style={ { color: '#f47521' } }
                   className="btn fw-bold"
                   type="button"
@@ -83,4 +83,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;
