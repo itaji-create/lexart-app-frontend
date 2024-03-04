@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './css/Login.css'
+import { requestPost } from '../utils/requests';
 
 class Login extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Login extends Component {
     this.setState({ [name]: value, error: null });
   };
 
-  handleLogin = (event) => {
+  handleLogin = async (event) => {
     event.preventDefault();
     const { email, password } = this.state;
 
@@ -24,8 +25,9 @@ class Login extends Component {
       this.setState({ error: 'Preencha todos os campos' });
       return;
     }
+    const user = await requestPost('/user/signIn', { email, password });
     window.location.href = "/produtos"
-    console.log('Autenticação bem-sucedida!');
+    console.log('Autenticação bem-sucedida!', user);
   };
 
   render() {
