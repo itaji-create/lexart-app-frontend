@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Swal from 'sweetalert2'
 import { requestGet, requestPut } from '../utils/requests';
 import ProductForm from '../components/ProductForm';
+import Header from '../components/Header';
 
 class UpdateProduct extends Component {
   constructor(props) {
@@ -72,17 +73,20 @@ class UpdateProduct extends Component {
   render() {
     const { name, brand, model, price, color } = this.state;
     return (
-      <div className='card'>
-        <ProductForm
-          name={name}
-          brand={brand}
-          model={model}
-          price={price}
-          color={color}
-          handleInputChange={this.handleInputChange}
-          handleButtonClick={this.handleClick}
-          btnName='Alterar'
-        />
+      <div>
+        <Header />
+        <div className='card m-5'>
+          <ProductForm
+            name={name}
+            brand={brand}
+            model={model}
+            price={price}
+            color={color}
+            handleInputChange={this.handleInputChange}
+            handleButtonClick={this.handleClick}
+            btnName='Alterar'
+          />
+        </div>
       </div>
     );
   }

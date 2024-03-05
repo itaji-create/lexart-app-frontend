@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import ProductCard from '../components/ProductCard';
 import { requestGet } from '../utils/requests';
 import SearchComponent from '../components/SearchComponent';
+import Header from '../components/Header';
 
 class Products extends Component {
   constructor(props) {
@@ -54,11 +55,7 @@ class Products extends Component {
 
     return (
       <div>
-        <h2>Products</h2>
-        <a href='/product/create' className="btn btn-success">
-          <i className="bi bi-plus"></i>
-          Criar produto
-        </a>
+        <Header />
         <SearchComponent onSearch={this.handleSearch} />
         <div className='container'>
           <div className='row flex-wrap'>
