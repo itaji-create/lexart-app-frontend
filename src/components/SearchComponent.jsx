@@ -30,7 +30,7 @@ class SearchComponent extends Component {
         />
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn-outline-custom"
           onClick={this.handleSearch}
         >
           Buscar

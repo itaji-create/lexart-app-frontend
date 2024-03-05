@@ -7,3 +7,21 @@ html, body, #root {
     font-weight: 400;
     font-family: Lato, Helvetica Neue, helvetica, sans-serif;
 }
+
+.btn-outline-custom {
+    color: #f47521;
+    font-weight: 700;
+    width: 150px;
+    padding: 8px;
+    background-color: rgb(252, 252, 252);
+    border-color: #f47521;
+    border-radius: 5px;
+}
+
+.btn-outline-custom:hover {
+    color: black;
+    background-color: #f47521;
+    border-color: black;
+    transition-duration: 0.5s;
+}
+

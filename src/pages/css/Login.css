@@ -4,21 +4,3 @@
     border-radius: 10px;
     max-width: 400px;
 }
-
-.btn-outline-custom {
-    color: #f47521;
-    font-weight: 700;
-    width: 150px;
-    padding: 8px;
-    background-color: rgb(252, 252, 252);
-    border-color: #f47521;
-    margin-bottom: 30px;
-    border-radius: 5px;
-}
-
-.btn-outline-custom:hover {
-    color: black;
-    background-color: #f47521;
-    border-color: black;
-    transition-duration: 0.5s;
-}
