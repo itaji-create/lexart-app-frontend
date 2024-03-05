@@ -26,7 +26,7 @@ export const requestPut = async (endpoint, body, token) => {
 };
 
 export const deleteItem = async (endpoint, id, token) => {
-  await api.delete(`${endpoint}/delete/${id}`, {
+  await api.delete(`${endpoint}/${id}`, {
     headers: { Authorization: token },
   });
 };

@@ -1,8 +1,32 @@
 import React from 'react';
+import { deleteItem } from '../utils/requests';
+import Swal from 'sweetalert2'
 
 class ProductCard extends React.Component { 
+  deleteProduct = () => {
+    const token = localStorage.getItem('token');
+    Swal.fire({
+      title: "Você tem certeza?",
+      text: "Esta ação não pode ser desfeita!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sim, deletar!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deletado!",
+          text: "Produto excluído do banco de dado.",
+          icon: "success"
+        });
+        deleteItem(`/api/products`, this.props.id, token).then(() => window.location.reload());
+      }
+      });
+  };
+
   render() {
-    const { id, name, price, brand, model, color } = this.props;
+    const { name, price, brand, model, color } = this.props;
     return (
       <div className='card col-lg-3 col-md-6 col-sm-12 m-2'>
         <div className="card-body">
@@ -18,10 +42,10 @@ class ProductCard extends React.Component {
           <p>{color}</p>
         </div>
         <div>
-          <button class="btn btn-warning mx-2">
+          <button className="btn btn-warning mx-2">
             Editar
           </button>
-          <button class="btn btn-danger">Excluir</button>
+          <button className="btn btn-danger" onClick={this.deleteProduct}>Excluir</button>
         </div>
         </div>
       </div>
