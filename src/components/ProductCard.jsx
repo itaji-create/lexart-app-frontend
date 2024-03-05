@@ -55,9 +55,12 @@ class ProductCard extends React.Component {
         </div>
         <div>
           <a href={`/produto/${id}`} className="btn btn-warning mx-2">
-            Editar
+            <i class="bi bi-pencil-square"></i>
+            
           </a>
-          <button className="btn btn-danger" onClick={this.deleteProduct}>Excluir</button>
+          <button className="btn btn-danger" onClick={this.deleteProduct}>
+            <i class="bi bi-trash"></i>
+          </button>
         </div>
         </div>
       </div>

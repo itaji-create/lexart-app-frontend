@@ -61,6 +61,7 @@ class CreateProduct extends Component {
           color={color}
           handleInputChange={this.handleInputChange}
           handleButtonClick={this.handleClick}
+          btnName="Criar Produto"
         />
       </div>
     );

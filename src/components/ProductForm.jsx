@@ -7,7 +7,7 @@ class ProductForm extends Component {
   };
 
   render() {
-    const { name, price, brand, model, color, handleButtonClick  } = this.props;
+    const { btnName, name, price, brand, model, color, handleButtonClick  } = this.props;
     return (
       <form className="form-control">
         <div className="form-group">
@@ -45,7 +45,7 @@ class ProductForm extends Component {
             </div>
         </div>
         <a href="/produtos" className="btn btn-secondary mx-2">Voltar</a>
-        <button type="submit" onClick={handleButtonClick} className="btn btn-primary my-2">Ok</button>
+        <button type="submit" onClick={handleButtonClick} className="btn btn-primary my-2">{btnName}</button>
       </form>
     );
   }
