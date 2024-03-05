@@ -20,9 +20,21 @@ class ProductCard extends React.Component {
           text: "Produto excluído do banco de dado.",
           icon: "success"
         });
-        deleteItem(`/api/products`, this.props.id, token).then(() => window.location.reload());
-      }
-      });
+        deleteItem(`/api/products`, this.props.id, token)
+          .then(() => window.location.reload())
+          .catch((error) => {
+            Swal.fire({
+              title: "Necessário validação",
+              text: "Por favor, faça o login para seguir nessa página",
+              icon: "warning"
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "/login";
+              }
+            });
+          });
+      };
+    });  
   };
 
   render() {
