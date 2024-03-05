@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Products from './pages/Products';
 import Register from './pages/Register';
+import CreateProduct from './pages/CreateProduct';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/login" element={ <Login /> } />
         <Route path="/produtos" element={ <Products /> } />
         <Route path="/registro" element={ <Register /> } />
+        <Route path="/product/create" element={ <CreateProduct /> } />
       </Routes>
     </BrowserRouter>
   );

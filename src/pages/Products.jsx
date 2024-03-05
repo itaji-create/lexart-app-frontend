@@ -37,6 +37,10 @@ class Products extends Component {
     return (
       <div>
         <h2>Products</h2>
+        <a href='/product/create' className="btn btn-success">
+          <i class="bi bi-plus"></i>
+          Criar produto
+        </a>
         <div className='container'>
           <div className='row flex-wrap'>
             {products && products.map((e) => (
