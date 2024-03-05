@@ -1,0 +1,43 @@
+import React, { Component } from "react"
+
+class SearchComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchTerm: '',
+    };
+  }
+
+  handleInputChange = (e) => {
+    this.setState({ searchTerm: e.target.value });
+  };
+
+  handleSearch = (e) => {
+    e.preventDefault();
+    const { searchTerm } = this.state;
+    this.props.onSearch(searchTerm);
+  };
+
+  render() {
+    return (
+      <div className="d-flex align-items-center">
+        <input
+          type="text"
+          className="form-control mr-2"
+          placeholder="Digite sua busca..."
+          value={this.state.searchTerm}
+          onChange={this.handleInputChange}
+        />
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={this.handleSearch}
+        >
+          Buscar
+        </button>
+      </div>
+    );
+  }
+}
+
+export default SearchComponent;
