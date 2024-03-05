@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Products from './pages/Products';
 import Register from './pages/Register';
 import CreateProduct from './pages/CreateProduct';
+import UpdateProduct from './pages/UpdateProduct';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/produtos" element={ <Products /> } />
         <Route path="/registro" element={ <Register /> } />
         <Route path="/product/create" element={ <CreateProduct /> } />
+        <Route path="/produto/:id" element={ <UpdateProduct /> } />
       </Routes>
     </BrowserRouter>
   );

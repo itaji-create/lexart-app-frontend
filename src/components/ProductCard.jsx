@@ -38,7 +38,7 @@ class ProductCard extends React.Component {
   };
 
   render() {
-    const { name, price, brand, model, color } = this.props;
+    const { id, name, price, brand, model, color } = this.props;
     return (
       <div className='card col-lg-3 col-md-6 col-sm-12 m-2'>
         <div className="card-body">
@@ -54,9 +54,9 @@ class ProductCard extends React.Component {
           <p>{color}</p>
         </div>
         <div>
-          <button className="btn btn-warning mx-2">
+          <a href={`/produto/${id}`} className="btn btn-warning mx-2">
             Editar
-          </button>
+          </a>
           <button className="btn btn-danger" onClick={this.deleteProduct}>Excluir</button>
         </div>
         </div>
