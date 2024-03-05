@@ -57,8 +57,8 @@ class Products extends Component {
       <div>
         <Header />
         <SearchComponent onSearch={this.handleSearch} />
-        <div className='container'>
-          <div className='row flex-wrap'>
+        <div className='m-3'>
+          <div className='row flex-wrap justify-content-center'>
             {products && products.map((e) => (
               <ProductCard key={e.id} id={e.id} name={e.name} brand={e.brand} model={e.model} price={e.price} color={e.color} />
             ))}

@@ -40,7 +40,7 @@ class ProductCard extends React.Component {
   render() {
     const { id, name, price, brand, model, color } = this.props;
     return (
-      <div className='card col-lg-3 col-md-6 col-sm-12 m-2'>
+      <div className='card col-lg-3 col-md-5 col-sm-10 m-2'>
         <div className="card-body">
         <h2 className="font-weight-bold">{name}</h2>
         <div className="price bg-light">
@@ -49,9 +49,9 @@ class ProductCard extends React.Component {
           </h4>
         </div>
         <div>
-          <p>{brand}</p>
-          <p>{model}</p>
-          <p>{color}</p>
+          <p><b>Marca: </b>{brand}</p>
+          <p><b>Modelo: </b>{model}</p>
+          <p><b>Cor: </b>{color}</p>
         </div>
         <div>
           <a href={`/produto/${id}`} className="btn btn-warning mx-2">
