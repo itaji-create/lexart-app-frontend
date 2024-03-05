@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './css/Login.css'
+import Swal from 'sweetalert2'
 import { requestPost } from '../utils/requests';
 
 class Login extends Component {
@@ -17,7 +18,7 @@ class Login extends Component {
     this.setState({ [name]: value, error: null });
   };
 
-  handleLogin = async (event) => {
+  handleLogin = (event) => {
     event.preventDefault();
     const { email, password } = this.state;
 
@@ -25,9 +26,32 @@ class Login extends Component {
       this.setState({ error: 'Preencha todos os campos' });
       return;
     }
-    const user = await requestPost('/user/signIn', { email, password });
-    window.location.href = "/produtos"
-    console.log('Autenticação bem-sucedida!', user);
+    requestPost('/user/signIn', { email, password })
+      .then((data) => {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        window.location.href = "/produtos"
+      })
+      .catch((error) => {
+        let timerInterval;
+        Swal.fire({
+          title: error.message,
+          html: "Por favor, confira seus dados e tente novamente.",
+          timer: 3000,
+          didOpen: () => {
+            Swal.showLoading();
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+          }
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+          }
+        });
+      });
+
   };
 
   render() {

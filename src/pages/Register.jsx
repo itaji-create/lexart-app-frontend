@@ -6,6 +6,7 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
       email: '',
       password: '',
       error: null,
@@ -17,21 +18,25 @@ class Register extends Component {
     this.setState({ [name]: value, error: null });
   };
 
-  handleClick = async (event) => {
+  handleClick = (event) => {
     event.preventDefault();
-    const { email, password } = this.state;
+    const { email, password, name } = this.state;
 
-    if (!email || !password) {
+    if (!email || !password || !name) {
       this.setState({ error: 'Preencha todos os campos' });
       return;
     }
-    const user = await requestPost('/user/signUp', { email, password });
-    window.location.href = "/produtos"
-    console.log('Novo usuario criado com sucesso!', user);
+    requestPost('/user/signUp', { name, email, password })
+      .then((user) => {
+        window.location.href = "/produtos";
+        console.log('Novo usuario criado com sucesso!', user);
+      })
+      .catch((error) => console.error('Erro na requisição:', error));
+
   };
 
   render() {
-    const { email, password, error } = this.state;
+    const { name, email, password, error } = this.state;
 
     return (
       <div className="container-fluid">
@@ -39,6 +44,17 @@ class Register extends Component {
           <form className="w-50 mt-5">
             <h2 className="mb-3 fw-bold text-light">Inscrever-se</h2>
             <div id="input-login-box">
+              <div className="form-floating">
+                <input
+                  type="text"
+                  name="name"
+                  className="form-control mb-2"
+                  id="floatingInput"
+                  value={name}
+                  onChange={ this.handleInputChange }
+                />
+                <label htmlFor="floatingInput">Endereço de E-mail</label>
+              </div>
               <div className="form-floating">
                 <input
                   type="text"
@@ -64,7 +80,7 @@ class Register extends Component {
             </div>
             <div className="my-3 text-center">
               {error && <p className="error-message">{error}</p>}
-              <button className="btn-outline-custom" onClick={this.handleLogin}>Criar Usuário</button>
+              <button className="btn-outline-custom" onClick={ this.handleClick }>Criar Usuário</button>
               <div className='fixed-bottom '>
                 <sub className="text-light">Já possui uma conta?</sub>
                 <a
