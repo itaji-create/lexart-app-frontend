@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Swal from 'sweetalert2'
 import ProductCard from '../components/ProductCard';
 import { requestGet } from '../utils/requests';
 
@@ -12,10 +13,21 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    // const token = localStorage.getItem('token');
-    requestGet('/api/products')
+    const token = localStorage.getItem('token');
+    requestGet('/api/products', token)
       .then((data) => this.setState({ products: this.state.products.concat(data) }))
-      .catch((error) => console.error('Erro na requisição:', error));
+      .catch((error) => {
+        Swal.fire({
+          title: "Necessário validação",
+          text: "Por favor, faça o login para seguir nessa página",
+          icon: "warning"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "/login";
+          }
+        });
+        console.error('Erro na requisição:', error)
+      });
     
   }
 
