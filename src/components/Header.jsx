@@ -11,7 +11,7 @@ class Header extends Component {
             Criar produto
           </a>
           <a href='/' className="btn btn-danger">
-            <i class="bi bi-box-arrow-right" />
+            <i className="bi bi-box-arrow-right" />
             Logout
           </a>
         </div>
