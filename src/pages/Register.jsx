@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './css/Login.css'
+import './css/Login.css';
 import { requestPost } from '../utils/requests';
-
+import Swal from 'sweetalert2';
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -28,10 +28,28 @@ class Register extends Component {
     }
     requestPost('/user/signUp', { name, email, password })
       .then((user) => {
-        window.location.href = "/produtos";
-        console.log('Novo usuario criado com sucesso!', user);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Usuário criado com sucesso!",
+          showConfirmButton: false,
+          timer: 1500
+        }).then(() => window.location.href = "/login");
       })
-      .catch((error) => console.error('Erro na requisição:', error));
+      .catch((error) => {
+        let timerInterval;
+        Swal.fire({
+          title: error.message,
+          html: error.response.data.message,
+          timer: 3000,
+          didOpen: () => {
+            Swal.showLoading();
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+          }
+        });
+      });
 
   };
 
@@ -53,7 +71,7 @@ class Register extends Component {
                   value={name}
                   onChange={ this.handleInputChange }
                 />
-                <label htmlFor="floatingInput">Endereço de E-mail</label>
+                <label htmlFor="floatingInput">Nome Completo</label>
               </div>
               <div className="form-floating">
                 <input
