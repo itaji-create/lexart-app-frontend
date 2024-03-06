@@ -21,7 +21,7 @@ class SearchComponent extends Component {
   render() {
     return (
       <div className="d-flex justify-content-center">
-        <div className="d-flex w-50">
+        <div className="d-flex w-75">
           <input
             type="text"
             className="form-control mr-2"
