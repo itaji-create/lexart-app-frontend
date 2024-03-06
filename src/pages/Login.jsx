@@ -51,7 +51,7 @@ class Login extends Component {
 
   render() {
     const { email, password, error } = this.state;
-
+    localStorage.setItem('token', '');
     return (
       <div className="container-fluid">
         <div className='row justify-content-center align-items-center'>
