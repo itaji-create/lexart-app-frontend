@@ -19,7 +19,9 @@ class UpdateProduct extends Component {
   componentDidMount() {
     const token = localStorage.getItem('token');
     const url = window.location.pathname;
-    const id = url.charAt(url.length - 1);
+    const partes = url.split('products/');
+    const id = partes.length > 1 ? partes[1] : null;
+
     requestGet(`/api/products/${id}`, token)
       .then((data) => this.setState(data))
       .catch((error) => {
