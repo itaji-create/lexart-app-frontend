@@ -55,7 +55,7 @@ class Login extends Component {
     return (
       <div className="container-fluid">
         <div className='row justify-content-center align-items-center'>
-          <form className="w-50 mt-5">
+          <form className="col-lg-4 col-md-6 col-sm-8 col-10 m-5">
             <h2 className="mb-3 fw-bold text-light">Login</h2>
             <div id="input-login-box">
               <div className="form-floating">
