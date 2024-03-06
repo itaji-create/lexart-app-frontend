@@ -1,8 +1,12 @@
 import axios from 'axios';
 
+const url = process.env.REACT_APP_BACKEND_URL;
+
 const api = axios.create({
-  baseURL: 'http://localhost:3002',
+  baseURL: url,
 });
+
+console.log(url);
 
 export const requestPost = async (endpoint, body, token) => {
   const { data } = await api.post(endpoint, body, {

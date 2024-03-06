@@ -40,7 +40,7 @@ class Register extends Component {
         let timerInterval;
         Swal.fire({
           title: error.message,
-          html: error.response.data.message,
+          html: "Culpa nossa, desculpe",
           timer: 3000,
           didOpen: () => {
             Swal.showLoading();
