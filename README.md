@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Bem vindo ao projeto Lexart-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bem vindo ao Projeto Lexart-Backend
 
-## Available Scripts
+Este projeto faz parte do desafio técnico do empresa Lexart. Nele foi construido uma plataforma que permite o login e cadastro de usuário, a renderização do produtos retornados do backend, assim como a criação, edição e exclusão.
 
-In the project directory, you can run:
+Foi feito o deploy dessa aplicação no Vercel, você poderá acessar as rotas através do link: [Lexart-frontend](https://lexart-app-frontend.vercel.app).
 
-### `npm start`
+## Pré-requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para iniciar o projeto é necessario ter instalado em sua máquina as seguintes ferramentas:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node versão >= 16.0
+- Definir as variáveis de ambiente
 
-### `npm test`
+## Instalação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone o repositório:
+```bash
+git clone https://github.com/itaji-create/lexart-app-frontend
+```
 
-### `npm run build`
+2. Acesse o diretório do projeto:
+```bash 
+cd lexart-app-frontend
+```
+3. Instale as dependências:
+```bash
+npm install
+```
+4. Rode a Aplicação:
+```bash
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tecnologias utilizadas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js
+- React
+- React router dom
+- Axios
+- Bootstrap
+- Bootstrap icons
+- Sweet alert
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Variáveis de Ambiente
 
-### `npm run eject`
+Para que a aplicação rode localmente você deve criar um arquivo .env na raiz do projeto e definir as variáveis de ambiente conforme o exemplo a seguir:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+````
+REACT_APP_BACKEND_URL=
+````
