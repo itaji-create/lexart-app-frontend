@@ -8,11 +8,11 @@ class CreateProduct extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      name: '',
-      brand: '',
-      model: '',
-      price: '',
-      color: ''
+      name: null,
+      brand: null,
+      model: null,
+      price: null,
+      color: null
     };
   }
 
@@ -31,8 +31,7 @@ class CreateProduct extends Component {
           title: "Produto criado com sucesso!",
           showConfirmButton: false,
           timer: 1500
-        });
-        window.location.href = '/produtos'
+        }).then(() => window.location.href = '/produtos');
     })
     .catch((error) => {
       let timerInterval;

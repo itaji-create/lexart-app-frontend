@@ -8,11 +8,11 @@ class UpdateProduct extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      name: '',
-      brand: '',
-      model: '',
-      price: '',
-      color: ''
+      name: null,
+      brand: null,
+      model: null,
+      price: null,
+      color: null
     };
   }
 
@@ -21,7 +21,6 @@ class UpdateProduct extends Component {
     const url = window.location.pathname;
     const regex = /\/produto\/(\d+)/;
     const id = url.match(regex)[1] || 1;
-    console.log(id);
 
     requestGet(`/api/products/${id}`, token)
       .then((data) => this.setState(data))
@@ -54,8 +53,7 @@ class UpdateProduct extends Component {
           title: "Produto alterado com sucesso!",
           showConfirmButton: false,
           timer: 1500
-        });
-        window.location.href = '/produtos'
+        }).then(() => window.location.href = '/produtos');
     })
     .catch((error) => {
       let timerInterval;

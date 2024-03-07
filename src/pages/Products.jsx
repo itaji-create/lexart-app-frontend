@@ -39,7 +39,7 @@ class Products extends Component {
       .catch((error) => {
         Swal.fire({
           title: "Campo de busca vazio!",
-          text: "Por favor, digite sua buscars",
+          text: "Por favor, digite sua busca",
           icon: "warning"
         }).then((result) => {
           if (result.isConfirmed) {
