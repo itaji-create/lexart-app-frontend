@@ -1,8 +1,6 @@
 # Bem vindo ao projeto Lexart-frontend
 
-# Bem vindo ao Projeto Lexart-Backend
-
-Este projeto faz parte do desafio técnico do empresa Lexart. Nele foi construido uma plataforma que permite o login e cadastro de usuário, a renderização do produtos retornados do backend, assim como a criação, edição e exclusão.
+Neste projeto foi construído uma plataforma que permite o login e cadastro de usuário, a renderização do produtos retornados do backend, assim como a criação, edição e exclusão.
 
 Foi feito o deploy dessa aplicação no Vercel, você poderá acessar as rotas através do link: [Lexart-frontend](https://lexart-app-frontend.vercel.app).
 
