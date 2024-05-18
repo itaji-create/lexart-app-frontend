@@ -1,4 +1,4 @@
-# Bem vindo ao projeto Lexart-frontend
+# Bem vindo ao projeto Store-frontend
 
 Neste projeto foi construído uma plataforma que permite o login e cadastro de usuário, a renderização do produtos retornados do backend, assim como a criação, edição e exclusão.
 
